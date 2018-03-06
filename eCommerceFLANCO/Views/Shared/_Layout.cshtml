@@ -1,0 +1,25 @@
+﻿
+@Html.Partial("_header")
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+@Html.Action("GetNavigation","Home")
+
+
+<section id="content">
+
+    <div class="container">
+        <div class="row">
+
+            @RenderBody()
+
+
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/bundles/lib")
+@RenderSection("scripts", required: false)
+
+@Html.Partial("_footer")

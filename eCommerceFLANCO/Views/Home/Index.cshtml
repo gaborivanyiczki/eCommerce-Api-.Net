@@ -1,0 +1,40 @@
+﻿@model System.Collections.Generic.List<eCommerceFLANCO.Models.Category>
+
+<section id="content">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="row slider-position">
+                    <div class="md-margin"></div><!-- space -->
+
+                    <div class="col-md-3 col-sm-4 col-xs-12 sidebar">
+                        @Html.Action("GetCategoriesWidget","Home")
+
+                        @Html.Action("GetBrandsWidget","Home")
+
+                        @Html.Partial("Widgets/subscribe")
+
+                        @Html.Partial("Widgets/related")
+
+                    </div>
+
+                    <div class="col-md-9 col-sm-8 col-xs-12 main-content ">
+
+
+                        @Html.Partial("Widgets/slider")
+
+                        @Html.Action("GetProducts", "Home")
+
+
+                    </div><!-- End .col-md-9 -->
+
+
+                </div><!-- End .row -->
+
+            </div><!-- End .col-md-12 -->
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+</section><!-- End #content -->

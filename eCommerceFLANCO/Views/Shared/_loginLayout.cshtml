@@ -1,0 +1,33 @@
+﻿
+@Html.Partial("_header")
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+<section id="content">
+
+    <div class="container">
+        <div class="row">
+            
+            <div id="breadcrumb-container">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="@Url.Action("Index","Home")">Back to home</a></li>
+                        <li class="active">@ViewBag.Description</li>
+                    </ul>
+                </div>
+            </div>
+
+            @RenderBody()
+
+
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/bundles/lib")
+@RenderSection("scripts", required: false)
+
+@Html.Partial("_footer")
+
+

@@ -1,0 +1,101 @@
+﻿<div id="main-nav-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 clearfix">
+
+                <nav id="main-nav">
+                    <div id="responsive-nav">
+                        <div id="responsive-nav-button">
+                            Menu <span id="responsive-nav-button-icon"></span>
+                        </div><!-- responsive-nav-button -->
+                    </div>
+                    <ul class="menu clearfix">
+                        <li>
+                            <a class="active" href="#">Acasa</a>
+                        </li>
+                        <li class="mega-menu-container">
+                            <a href="#">SHOP</a>
+                            <div class="mega-menu clearfix">
+                                
+                            @foreach (var item in Model)
+                            {
+                                if (item.ParentId == null)
+                                {
+                                   
+                                <div class="col-5">
+                                    <b class="mega-menu-title">@item.Name</b><!-- End .mega-menu-title -->
+                                  
+                                    <ul class="mega-menu-list clearfix">
+                                        @foreach(var subc in Model)
+                                        {
+                                            if (subc.ParentId == item.Id)
+                                             {
+                                                 <li><a href="/shop/#">@subc.Name</a></li>
+                                             }
+                                        }
+                                    </ul>
+                                </div>
+                                    <!-- End .col-5 -->
+                                }
+                            }
+              
+                            </div><!-- End .mega-menu -->
+                        </li>
+
+                        <li>
+                            <a href="#">Noutati</a>
+                        </li>
+                        <li>
+                            <a href="#">Promotii</a>
+                        </li>
+                        <li>
+                            <a href="#">Resigilate</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div id="quick-access">
+                    <div class="dropdown-cart-menu-container pull-right">
+                        <div class="btn-group dropdown-cart">
+                            <button type="button" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">
+                                <span class="cart-menu-icon"></span>
+                                0 item(s) <span class="drop-price">- $0.00</span>
+                            </button>
+
+                            <div class="dropdown-menu dropdown-cart-menu pull-right clearfix" role="menu">
+                                <p class="dropdown-cart-description">Recently added item(s).</p>
+                                <ul class="dropdown-cart-product-list"></ul>
+
+                                <ul class="dropdown-cart-total">
+                                    <li><span class="dropdown-cart-total-title">Shipping:</span>5 &euro;</li>
+                                    <li><span class="dropdown-cart-total-title">Total:</span>650 &euro;</li>
+                                </ul><!-- .dropdown-cart-total -->
+                                <div class="dropdown-cart-action">
+                                    <p><a href="cart.html" class="btn btn-custom-2 btn-block">Cart</a></p>
+                                    <p><a href="checkout.html" class="btn btn-custom btn-block">Checkout</a></p>
+                                </div><!-- End .dropdown-cart-action -->
+
+                            </div><!-- End .dropdown-cart -->
+                        </div><!-- End .btn-group -->
+                    </div><!-- End .dropdown-cart-menu-container -->
+
+
+                    <form class="form-inline quick-search-form" role="form" action="#">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search here">
+                        </div><!-- End .form-inline -->
+                        <button type="submit" id="quick-search" class="btn btn-custom"></button>
+                    </form>
+                </div><!-- End #quick-access -->
+            </div><!-- End .col-md-12 -->
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+</div><!-- End #nav -->
+</div><!-- End #inner-header -->
+</header><!-- End #header -->
+

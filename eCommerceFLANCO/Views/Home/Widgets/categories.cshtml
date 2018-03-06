@@ -1,0 +1,30 @@
+﻿<div class="widget">
+    <h3><span class="glyphicon glyphicon-list"></span> Alege Categorie</h3>
+    <div class="list-group list-group-brand list-group-accordion">
+        
+        @foreach (var item in Model)
+     {
+         if (item.ParentId == null)
+         {
+            // <a href="#" class="list-group-item"><b class="text-info">@item.Name</b></a>
+             <div class="dropdown">
+                 <a href="#" class="list-group-item" data-toggle="dropdown"><b class="text-info">@item.Name</b></a>
+                 <ul class="dropdown-menu" role="menu">
+                 @foreach (var subc in Model)
+                 {
+                     if (subc.ParentId == item.Id)
+                     {
+                         <li><a href="#" class="list-group-item">@subc.Name</a></li>
+                     }
+                 }
+                     </ul>
+             </div>    
+
+         }
+     }
+
+  
+    </div><!-- End .list-group -->
+</div>
+
+

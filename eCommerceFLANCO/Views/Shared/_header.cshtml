@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Responsive modern ecommerce Html5 Template">
+    <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic%7CPT+Gudea:400,700,400italic%7CPT+Oswald:400,700,300' rel='stylesheet' id="googlefont">
+
+
+
+    <!-- Favicon and Apple Icons -->
+    <link rel="icon" type="image/png" href="#">
+
+    <style id="custom-style">
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header-top-left">
+                                <ul id="top-links" class="clearfix">
+
+                                    <li><a href="#" title="Wishlist"><span class="top-icon top-icon-pencil"></span><span class="hide-for-xs">Wishlist</span></a></li>
+                                    <!--<li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="My Account"><span class="top-icon top-icon-user"></span><span class="hide-for-xs">My Account</span> <span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Profile</a></li>
+                                            <li><a href="#">My Favourites</a></li>
+                                            <li><a href="#">My Orders</a></li>
+                                            <li><a href="#">Setings</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Logout</a></li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li class="mega-menu-container"><a href="#" title="Contul meu"><span class="top-icon top-icon-user"></span><span class="hide-for-xs">Contul meu</span></a></li>
+
+                                    <li><a href="cart.html" title="Cos"><span class="top-icon top-icon-cart"></span><span class="hide-for-xs">Cos de cumparaturi</span></a></li>
+                                </ul>
+                            </div><!-- End .header-top-left -->
+                            <div class="header-top-right">
+
+                                <!--<div class="header-top-dropdowns pull-right">
+                                   <div class="btn-group dropdown-money">
+                                        <button type="button" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">
+                                            <span class="hide-for-xs">US Dollar</span><span class="hide-for-lg">$</span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li><a href="#"><span class="hide-for-xs">Euro</span><span class="hide-for-lg">&euro;</span></a></li>
+                                            <li><a href="#"><span class="hide-for-xs">Pound</span><span class="hide-for-lg">&pound;</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group dropdown-language">
+                                        <button type="button" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">
+                                            <span class="flag-container"><img src="images/england-flag.png" alt="flag of england"></span>
+                                            <span class="hide-for-xs">English</span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li><a href="#"><span class="flag-container"><img src="images/italy-flag.png" alt="flag of england"></span><span class="hide-for-xs">Italian</span></a></li>
+                                            <li><a href="#"><span class="flag-container"><img src="images/spain-flag.png" alt="flag of italy"></span><span class="hide-for-xs">Spanish</span></a></li>
+                                            <li><a href="#"><span class="flag-container"><img src="images/france-flag.png" alt="flag of france"></span><span class="hide-for-xs">French</span></a></li>
+                                            <li><a href="#"><span class="sm-separator"><img src="images/germany-flag.png" alt="flag of germany"></span><span class="hide-for-xs">German</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+
+                                <div class="header-text-container pull-right">
+
+                                    <p class="header-text">Bine ati venit la Flanco!</p>
+                                    <p class="header-link"><a href="@Url.Action("login","account")">Autentificare</a>&nbsp;or&nbsp;<a href="@Url.Action("register","account")">Inregistrare</a></p>
+
+                                </div><!-- End .pull-right -->
+                            </div><!-- End .header-top-right -->
+                        </div><!-- End .col-md-12 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End #header-top -->
+
+            <div id="inner-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12 logo-container">
+                            <h1 class="logo clearfix">
+                                <a href="@Url.Action("Index","Home")" title="Mereu aproape!"><img src="/Content/images/logo.png" alt="Mereu aproape!" width="220" height="85"></a>
+                            </h1>
+                        </div><!-- End .col-md-5 -->
+                        <div class="col-md-7 col-sm-7 col-xs-12 header-inner-right">
+
+                            <div class="header-box contact-infos pull-right">
+                                <ul>
+                                    <li><span class="header-box-icon header-box-icon-skype"></span>info@flanco.ro</li>
+                                    <li><span class="header-box-icon header-box-icon-email"></span><a href="mailto:info@yahoo.com">office@flanco.ro</a></li>
+                                </ul>
+                            </div><!-- End .contact-infos -->
+
+                            <div class="header-box contact-phones pull-right clearfix">
+                                <span class="header-box-icon header-box-icon-earphones"></span>
+                                <ul class="pull-left">
+                                    <li>+40 058 9493</li>
+                                    <li>+43 859 9949</li>
+                                </ul>
+                            </div><!-- End .contact-phones -->
+
+                        </div><!-- End .col-md-7 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+

@@ -1,0 +1,139 @@
+﻿@model IEnumerable<eCommerceFLANCO.Models.Product>
+
+@{
+    ViewBag.Title = "Produse";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<span style="display: block; height: 20px;"></span>
+
+<div class="container">
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("create")'">Produs Nou</button>
+</div>
+
+<span style="display: block; height: 20px;"></span>
+<div class="container">
+    <table id="products" class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitsInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActualPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVisible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedTime)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            var table = $("#products").DataTable({
+                ajax: {
+                    url: "/admin/api/products",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "category.name"
+                    },
+                    {
+                        data: "supplier.name"
+                    },
+                    {
+                        data: "brand.name"  
+                    },
+                    {
+                        data: "name"
+                    },
+                    {
+                        "bSortable": false,
+                        data: "description"
+                    },
+                    {
+                        "bSortable": false,
+                        data: "slug"
+                    },
+                    {
+                        data: "unitsInStock"
+                    },
+                    {
+                        data: "price"
+                    },
+                    {
+                        data: "actualPrice"
+                    },
+                    {
+                        data: "isVisible"
+                    },
+                    {
+                        data: "addedTime"
+                    },
+                    {
+                        "bSortable": false,
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn btn-danger btn-xs js-delete' type='button' data-product-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+            $("#products").on("click",".js-delete", function(result) {
+                    var button = $(this);
+
+                    bootbox.confirm("Esti sigur ca doresti sa stergi?", function(result) {       
+                    if (result) {
+                        $.ajax({
+                                url: "/admin/api/products/" + button.attr("data-product-id"),
+                                method: "DELETE",
+                                succes: function() {
+                                    table.row(button.closest("tr")).remove().draw();
+                                }
+                            })
+                            .done(function() {
+                                toastr.success("Sters cu succes!");
+                            })
+                            .fail(function() {
+                                toastr.fail("Stergere esuata");
+                            });
+                        }
+                    });
+                });
+        });
+    </script>
+}
